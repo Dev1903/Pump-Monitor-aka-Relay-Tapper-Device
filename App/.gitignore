@@ -31,7 +31,7 @@ build/
 **/ios/Runner/GoogleService-Info.plist   # sensitive, local only
 
 # Firebase
-lib/firebase_options.dart   # generated Firebase keys
+**/lib/firebase_options.dart   # generated Firebase keys
 .firebase/                  # sometimes Firebase CLI generates local cache
 .firebaserc                 # optional if you want to hide project aliases
 
