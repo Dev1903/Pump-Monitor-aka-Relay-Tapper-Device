@@ -1,0 +1,54 @@
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-configuration
+.flutter-plugins-dependencies
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Android
+**/android/.gradle/
+**/android/app/build/
+**/android/build/
+**/android/captures/
+**/android/local.properties
+**/android/.cxx/             # native build artifacts
+**/android/app/google-services.json  # sensitive, uncomment if you want local only
+
+# iOS
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Runner/GoogleService-Info.plist   # sensitive, local only
+
+# Firebase
+lib/firebase_options.dart   # generated Firebase keys
+.firebase/                  # sometimes Firebase CLI generates local cache
+.firebaserc                 # optional if you want to hide project aliases
+
+# Assets
+assets/                     # keep your assets folder
+
+# Logs and temp files
+*.log
+*.lock
+*.DS_Store
+*.swp
+*.tmp
+
+# Generated files
+pubspec.lock
+
+# Firebase
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
