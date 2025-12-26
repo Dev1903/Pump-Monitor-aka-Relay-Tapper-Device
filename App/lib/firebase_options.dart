@@ -53,12 +53,12 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA96ygOSUpVsi6NTTrisxD3ywD-7s_5s1Q',
-    appId: '1:292741931139:android:8b6ec4dbce762a7433fbb6',
-    messagingSenderId: '292741931139',
-    projectId: 'pump-monitor-dd82b',
-    databaseURL: 'https://pump-monitor-dd82b-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'pump-monitor-dd82b.firebasestorage.app',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    databaseURL: '',
+    storageBucket: '',
   );
 
 }
