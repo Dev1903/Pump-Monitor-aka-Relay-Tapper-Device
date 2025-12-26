@@ -5,32 +5,30 @@ import 'package:permission_handler/permission_handler.dart';
 import 'firebase_options.dart';
 import 'screens/home_screen.dart';
 import 'helpers/notifications_helper.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Firebase
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // Subscribe to topic "all" so the function’s message is received
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // 🔑 REQUIRED FOR REALTIME DATABASE ACCESS
+  await FirebaseAuth.instance.signInAnonymously();
+
   await FirebaseMessaging.instance.subscribeToTopic("all");
-
-  // Initialize local notifications
   await initializeNotifications();
-
-  // Set background handler
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
-
-  // Request notification permission
   await requestNotificationPermission();
 
-  // Foreground notification listener
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     final title = message.notification?.title ?? 'Notification';
     final body = message.notification?.body ?? '';
     showLocalNotification(title, body);
   });
 
-  // Print FCM token
   final token = await FirebaseMessaging.instance.getToken();
   debugPrint("FCM Token: $token");
 
